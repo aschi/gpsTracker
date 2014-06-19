@@ -1,0 +1,99 @@
+\begin{thebibliography}{10}
+
+\bibitem{georef}
+ArcGIS 9.2.
+\newblock Georeferencing and coordinate systems.
+\newblock
+  \url{http://webhelp.esri.com/arcgisdesktop/9.2/index.cfm?TopicName=Georeferencing_and_coordinate_systems}.
+
+\bibitem{leicagps}
+Leica~Geosystems AG.
+\newblock {\em Einführung in die GPS Vermessung (Global Positioning System)}.
+
+\bibitem{contentprovider}
+Android Developer~API Documentation.
+\newblock Content providers.
+\newblock
+  \url{http://developer.android.com/guide/topics/providers/content-providers.html}.
+
+\bibitem{locationmanager}
+Android Developer~API Documentation.
+\newblock Locationmanager.
+\newblock
+  \url{http://developer.android.com/reference/android/location/LocationManager.html}.
+
+\bibitem{batterystatus}
+Android Developer~API Documentation.
+\newblock Monitoring the battery level and charging state.
+\newblock
+  \url{http://developer.android.com/training/monitoring-device-state/battery-monitoring.html}.
+
+\bibitem{savingfiles}
+Android Developer~API Documentation.
+\newblock Saving files.
+\newblock
+  \url{http://developer.android.com/training/basics/data-storage/files.html}.
+
+\bibitem{douglaspeucker}
+David~H Douglas and Peucker~Thomas K.
+\newblock {Algorithms for the reduction of the number of points required to
+  represent a digitized line or its caricature}.
+\newblock {\em Computer Graphics and Image Processing, Vol. 1, No. 3.},
+  10(2):112--122, 1973.
+
+\bibitem{crud}
+Wikimedia Foundation.
+\newblock Create, read, update and delete.
+\newblock \url{http://en.wikipedia.org/wiki/Create,_read,_update_and_delete}.
+
+\bibitem{gpsprecision}
+Wikimedia Foundation.
+\newblock Global positioning system - genauigkeit der positionsbestimmung.
+\newblock
+  \url{http://de.wikipedia.org/wiki/Global_Positioning_System#Genauigkeit_der_Positionsbestimmung}.
+
+\bibitem{gpxwiki}
+Wikimedia Foundation.
+\newblock Gps exchange format.
+\newblock \url{http://en.wikipedia.org/wiki/GPS_Exchange_Format}.
+
+\bibitem{trilateration}
+Wikimedia Foundation.
+\newblock Trilateration.
+\newblock \url{http://de.wikipedia.org/wiki/Trilateration}.
+
+\bibitem{wsg84}
+Wikimedia Foundation.
+\newblock World geodetic system 1984.
+\newblock \url{http://en.wikipedia.org/wiki/World_Geodetic_System_1984}.
+
+\bibitem{gpscorrection}
+Jason~Daniel Martin, Jens Krösche, and Susanne Boll.
+\newblock Dynamic gps-position correction for mobile pedestrian navigation and
+  orientation.
+\newblock {\em Proceedings of the 3rd workshop on positioning, navigation and
+  communication}.
+
+\bibitem{geodesy}
+Penstate~College of~Earth and Mineral Sciences.
+\newblock Geodesy, datums, and coordinate systems.
+\newblock \url{https://www.e-education.psu.edu/lidar/l3_p3.html}.
+
+\bibitem{ramer}
+Urs Ramer.
+\newblock {An iterative procedure for the polygonal approximation of plane
+  curves}.
+\newblock {\em Computer Graphics and Image Processing, Vol. 1, No. 3.},
+  1(3):244--256, 1972.
+
+\bibitem{haversine}
+R.~W. Sinnott.
+\newblock {Virtues of the Haversine}.
+\newblock {\em Sky and Telescope}, 68(2):159+, 1984.
+
+\bibitem{gpx}
+Topografix.
+\newblock Gpx 1.1 schema documentation.
+\newblock \url{http://www.topografix.com/GPX/1/1/}.
+
+\end{thebibliography}

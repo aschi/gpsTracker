@@ -1,0 +1,7 @@
+\clearpage
+\section{Fazit}
+Trotz anfäglicher Schwierigkeiten und dem hohen Einarbeitungsaufwand in die Android Entwicklung, ist es gelungen einen Funktionsfähigen GPS Tracker zu entwickeln. Der Export ins GPX Format stellte keine Probleme dar. Die Optimierung des Akkuverbrauchs, welche zu Beginn im Fokus lag, war, wie im Kapitel \ref{subsec:analysebatteryusage} beschrieben, nicht erfolgreich. Jedoch hält sich der Akkuverbrauch in Grenzen, so dass auch Routen vom mehreren Stunden kein Problem darstellen dürften.
+
+Um den GPS Tracker produktiv oder kommerziell nutzen zu können, müssten einige kleine Anpassungen vorgenommen werden. Zum Beispiel müssten Datenbankzugriffe und die Exportfunktion in separate Threads ausgelagert werden, so dass sie das Frontend nicht mehr blockieren. Weiter könnten die gewonnen Daten, zum Beispiel mit den im Kapitel \ref{subsec:analyseprecision} beschriebenen Techniken, verfeinert und optmiert werden.
+
+Die Probleme mit der Androidentwicklung widerspiegeln sich auch im Vergleich zwischen der Soll- und der Ist-Planung des Projektes (Kapitel \ref{subsec:planung}). Ich musste deshalb vor allem Einschnitte in der Zeit zum Sammeln von Testdaten (dem Velofahren) in kauf nehmen. Auch die Dokumentation der Implementation wurde aus diesem Grund nach hinten verschoben, was sich unter anderem bei der Abgabe der ersten Rohfassung vom 04.06.2014 gezeigt hat.

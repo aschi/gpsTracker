@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: seminararbeit.aux
+The style file: plain.bst
+Database file #1: projekt.bib.bib
+I was expecting a `,' or a `}'---line 110 of file projekt.bib.bib
+ :   
+ :   publisher =    {Leica Geosystems AG},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty publisher in leicagps
+Warning--empty year in leicagps
+Warning--empty year in gpscorrection
+You've used 17 entries,
+            2118 wiz_defined-function locations,
+            566 strings with 6392 characters,
+and the built_in function-call counts, 3857 in all, are:
+= -- 357
+> -- 142
+< -- 0
++ -- 59
+- -- 42
+* -- 162
+:= -- 657
+add.period$ -- 50
+call.type$ -- 17
+change.case$ -- 71
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 139
+empty$ -- 382
+format.name$ -- 42
+if$ -- 825
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 6
+newline$ -- 87
+num.names$ -- 34
+pop$ -- 123
+preamble$ -- 1
+purify$ -- 55
+quote$ -- 0
+skip$ -- 129
+stack$ -- 0
+substring$ -- 139
+swap$ -- 17
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 66
+warning$ -- 3
+while$ -- 37
+width$ -- 19
+write$ -- 159
+(There was 1 error message)

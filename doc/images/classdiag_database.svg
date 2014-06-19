@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="508" version="1.1" width="642" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="392" stroke="#ffffff" stroke-width="1" width="264" x="14" y="102"/>
+<rect fill="none" height="392" stroke="#000000" stroke-width="1" width="264" x="14" y="102"/>
+<text font-family="Dialog" font-size="12" x="70" y="115">
+GPSTrackerSQLiteHelper</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="264" x="14" y="125"/>
+<text font-family="Dialog" font-size="12" x="18" y="139">
+TABLE_TRACKS : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="155">
+TR_COLUMN_ID : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="171">
+TR_COLUMN_NAME : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="187">
+TR_COLUMN_STARTTIMESTAMP : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="203">
+TR_COLUMN_ENDTIMESTAMP : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="219">
+TR_COLUMN_BATTERYSTART : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="235">
+TR_COLUMN_BATTERYEND : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="251">
+TR_COLUMN_CONFIG_DIST : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="267">
+TR_COLUMN_CONFIG_TIME : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="283">
+TABLE_WAYPOINTS : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="299">
+WP_COLUMN_ID : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="315">
+WP_COLUMN_TRACK : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="331">
+WP_COLUMN_LONGITUDE : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="347">
+WP_COLUMN_LATITUDE : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="363">
+WP_COLUMN_ALTITUDE : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="379">
+WP_COLUMN_TIMESTAMP : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="395">
+DATABASE_NAME : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="411">
+DATABASE_VERSION : int</text>
+<text font-family="Dialog" font-size="12" x="18" y="427">
+TRACKS_TABLE_CREATE : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="443">
+WAYPOINTS_TABLE_CREATE : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="264" x="14" y="453"/>
+<text font-family="Dialog" font-size="12" x="18" y="467">
+onCreate()</text>
+<text font-family="Dialog" font-size="12" x="18" y="483">
+onUpgrade()</text>
+<rect fill="#ffffff" height="67" stroke="#ffffff" stroke-width="1" width="123" x="70" y="14"/>
+<rect fill="none" height="67" stroke="#000000" stroke-width="1" width="123" x="70" y="14"/>
+<text font-family="Dialog" font-size="12" x="75" y="27">
+SQLiteOpenHelper</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="123" x="70" y="37"/>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="123" x="70" y="58"/>
+<polyline fill="none" points="133,102 133,80" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="133,80 140,92 126,92" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="133,80 140,92 126,92" stroke="#000000" stroke-width="1"/>
+<rect fill="#ffffff" height="168" stroke="#ffffff" stroke-width="1" width="229" x="318" y="102"/>
+<rect fill="none" height="168" stroke="#000000" stroke-width="1" width="229" x="318" y="102"/>
+<text font-family="Dialog" font-size="12" x="375" y="115">
+TracksDataSource</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="229" x="318" y="125"/>
+<text font-family="Dialog" font-size="12" x="322" y="139">
+database : SQLiteDatabase</text>
+<text font-family="Dialog" font-size="12" x="322" y="155">
+dbHelper : GPSTrackerSQLiteHelper</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="229" x="318" y="165"/>
+<text font-family="Dialog" font-size="12" x="322" y="179">
+open()</text>
+<text font-family="Dialog" font-size="12" x="322" y="195">
+close()</text>
+<text font-family="Dialog" font-size="12" x="322" y="211">
+createTrack(Track)</text>
+<text font-family="Dialog" font-size="12" x="322" y="227">
+deleteTrack(Track)</text>
+<text font-family="Dialog" font-size="12" x="322" y="243">
+getTrackById(id) : Track</text>
+<text font-family="Dialog" font-size="12" x="322" y="259">
+getAllTracks() : List&lt;Track&gt;</text>
+<rect fill="#ffffff" height="168" stroke="#ffffff" stroke-width="1" width="310" x="318" y="294"/>
+<rect fill="none" height="168" stroke="#000000" stroke-width="1" width="310" x="318" y="294"/>
+<text font-family="Dialog" font-size="12" x="404" y="307">
+WaypointsDataSource</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="310" x="318" y="317"/>
+<text font-family="Dialog" font-size="12" x="322" y="331">
+database : SQLiteDatabase</text>
+<text font-family="Dialog" font-size="12" x="322" y="347">
+dbHelper : GPSTrackerSQLiteHelper</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="310" x="318" y="357"/>
+<text font-family="Dialog" font-size="12" x="322" y="371">
+open()</text>
+<text font-family="Dialog" font-size="12" x="322" y="387">
+close()</text>
+<text font-family="Dialog" font-size="12" x="322" y="403">
+createWaypoint(Waypoint)</text>
+<text font-family="Dialog" font-size="12" x="322" y="419">
+deleteWaypoint(Waypoint)</text>
+<text font-family="Dialog" font-size="12" x="322" y="435">
+getWaypointsForTrack(trackId) : List&lt;Waypoint&gt;</text>
+<text font-family="Dialog" font-size="12" x="322" y="451">
+getAllWaypoints() : List&lt;Waypoint&gt;</text>
+<polyline fill="none" points="277,350 318,350" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="277,206 318,206" stroke="#000000" stroke-width="1"/>
+</svg>
