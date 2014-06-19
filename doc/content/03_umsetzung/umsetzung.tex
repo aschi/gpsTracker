@@ -13,7 +13,7 @@ Das Backend unserer Android Applikation besteht aus den beiden Klassen Track und
   \label{fig:classdiag_backend}
 \end{figure}
 
-Im Klassendiagramm (Abbildung: \ref{fig:classdiag_backend}) ist ersichtlich, dass ein Track primär aus einer Menge von Waypoints besteht. Zusätzlich Informationen zu Start- und Endzeit und Akkuzustand bei Start beziehungsweise Ende des Tracks mitgeführt. Die Waypoints bestehn aus den Koordinaten (Breiten- und Längengraden), der Höhe (Höhe über dem Referenzgeoiden) und einem Timestamp.
+Im Klassendiagramm (Abbildung \ref{fig:classdiag_backend}) ist ersichtlich, dass ein Track primär aus einer Menge von Waypoints besteht. Zusätzlich werden Informationen zu Start- und Endzeit und Akkuzustand bei Start beziehungsweise Ende des Tracks mitgeführt. Die Waypoints bestehn aus den Koordinaten (Breiten- und Längengraden), der Höhe (Höhe über dem Geoiden) und einem Timestamp.
 
 Der Track besitzt öffentliche Methoden zum Berechnen des Akkuverbrauchs, der Distanz, der Höhendifferenz und der Verbrauchten Zeit. Folgend wird kurz aufgezeigt wie die Funktionsweise dieser Methoden ist.
 
@@ -31,7 +31,7 @@ Der Track besitzt öffentliche Methoden zum Berechnen des Akkuverbrauchs, der Di
 \end{itemize}
 \end{itemize}
 
-Weiter gibt es in der Klasse Track die beiden Methoden \lstinline$startTrack()$ und \lstinline$endTrack$, welche das Tracking an sich steuern. In der Methode \lstinline$startTrack$ (Listing \ref{lst:starttrack} werden zuerst die beiden Einstellungen mithilfe des Android \lstinline$PreferenceManager$ ausgelesen. Als nächstes wird die StartZeit und der Batteriezustand beim Starten des Tracks festgehalten. Zum Schluss wird auf den \lstinline$LocationManager$ mithilfe des per Parameter übergebenen Contexts zugegriffen. Diesem \lstinline$LocationManager$ wird dann ein neuer \lstinline$LocationListener$ angehängt.
+Weiter gibt es in der Klasse Track die beiden Methoden \lstinline$startTrack()$ und \lstinline$endTrack$, welche das Tracking an sich steuern. In der Methode \lstinline$startTrack$ (Listing \ref{lst:starttrack}) werden zuerst die beiden Einstellungen mithilfe des Android \lstinline$PreferenceManager$ ausgelesen. Als nächstes wird die StartZeit und der Batteriezustand beim Starten des Tracks festgehalten. Zum Schluss wird auf den \lstinline$LocationManager$ mithilfe des per Parameter übergebenen Contexts zugegriffen. Diesem \lstinline$LocationManager$ wird dann ein neuer \lstinline$LocationListener$ angehängt.
 
 Beim Anhängen des \lstinline$LocationListener$s werden folgende Paramter mitgegeben: 
 \begin{itemize}
@@ -40,7 +40,7 @@ Beim Anhängen des \lstinline$LocationListener$s werden folgende Paramter mitgeg
 	\item minDistance: Die minimale Distanz zwischen der aktuellen Location und der letzten. Wenn nach Ablauf des Zeitintervals diese Distanz nicht überschritten ist, wird der LocationListener nicht angestossen. \cite{locationmanager}
 \end{itemize}
 
-\begin{lstlisting}[caption={startTrack Methode}, label{lst:starttrack}]
+\begin{lstlisting}[caption={startTrack Methode}, label={lst:starttrack}]
 private LocationListener = new LocationListener() {
 	public void onLocationChanged(Location location) {
 		// Called when a new location is found by the network location provider.
@@ -68,7 +68,7 @@ public void startTrack(Context context) {
 
 Das auslesen des Batteriezustandes geschieht dabei in der privaten Methode \lstinline$getBatteryStatus$, welche im Kapitel \ref{subsec:battery} weiter erläutert ist.
 
-Das Abschliessen eines Tracks ist in der Methode \lstinline$endTrack$ abgebildet. Als erstes wird der verwendete \lstinline$LocationListener$ vom \lstinline$LocationManager$ getrennt. Danach wird geprüft, ob Wegpunkte aufgezeichnet wurden, falls nicht wird \lstinline$false$ zurückgegeben. Wenn Wegpunkte vorhanden sind, werden Zeit und Batteriezustand bei Ende des Tracks (quasi jetzt) auf das Objekt geschrieben und das Objekt wird in die Datenbank geschrieben. Die Datenbankanbindung wird im Kapitel \ref{subsec:database} weiter erläutert.
+Das Abschliessen eines Tracks ist in der Methode \lstinline$endTrack$ abgebildet. Als erstes wird der verwendete \lstinline$LocationListener$ vom \lstinline$LocationManager$ getrennt. Danach wird geprüft, ob Wegpunkte aufgezeichnet wurden, falls nicht wird \lstinline$false$ zurückgegeben. Wenn Wegpunkte vorhanden sind, werden Zeit und Batteriezustand bei Ende des Tracks auf das Objekt geschrieben und das Objekt wird in der Datenbank abgelegt. Die Datenbankanbindung wird im Kapitel \ref{subsec:database} weiter erläutert.
 
 \begin{lstlisting}[caption={endTrack Methode}, label={lst:endtrack}]
 public boolean endTrack(Context context) {
@@ -104,18 +104,18 @@ Zum persistieren der Backend Objekte (\lstinline$Waypoint$ und \lstinline$Track$
 
 Zum Initialisieren der Datenbank und als Speicherort für die verwendeten Spalten- und Tabellennamen wurde der \lstinline$GPSTrackerSQLiteHelper$ verwendet. Dieser Helper ist von der Klasse SQLiteOpenHelper abgeleitet und überschreibt deren Methoden \lstinline$onCreate()$ und \lstinline$onUpdate()$. Die erstere wird aufgerufen, wenn die Datenbank noch nicht auf dem Device vorhanden ist. Die letztere wird aufgerufen, wenn die \lstinline$DATABASE_VERISON$ höher ist als diejenige, die beim erstellen der Datenbank auf dem Device aktuell war.
 
-\lstinline$TracksDataSource$ und \lstinline$WaypointsDataSource$ bieten neben den $open()$ und $close()$ Methoden, welche eine Verbindung zur Datenbank herstellen und die Verbindung wieder trennen, ein Subset der üblichen CRUD \cite{crud} Methoden, um die notwendigen Datenbankzugriffe auf eine möglichst einfache Art und Weise zu Managen. Im Listing \ref{lst:savetrackexample} ist an einem Beispiel ersichtlich, wie die \lstinline$TracksDataSource$ Klasse verwendet wird.
+\lstinline$TracksDataSource$ und \lstinline$WaypointsDataSource$ bieten neben den $open()$ und $close()$ Methoden, welche eine Verbindung zur Datenbank herstellen beziehungsweise die Verbindung wieder trennen, ein Subset der üblichen CRUD \cite{crud} Methoden an, um die notwendigen Datenbankzugriffe auf eine möglichst einfache Art und Weise zu Verwalten. Im Listing \ref{lst:savetrackexample} ist an einem Beispiel ersichtlich, wie die \lstinline$TracksDataSource$ Klasse verwendet wird.
 
 \begin{lstlisting}[caption={Beispiel: Track speichern}, label={lst:savetrackexample}]
 TracksDataSource tds = new TracksDataSource(context);
 tds.open(); //Connect database
-tds.createTrack(track); //create track 
+tds.createTrack(track); //save track as new record 
 tds.close(); //Close database connection
 \end{lstlisting}
 
 \subsection{Berechnung der Distanz}
 \label{subsec:distance}
-Die Distanz zwischen zwei Wegpunkten wird gemäss der Haversine Formel (Siehe Kapitel \ref{subsec:basicscalcdistance}) berechnet. Implementiert ist dies als Methode \lstinline$getDistanceTo(Waypoint)$ welche die Distanz zwischen dem aufrufenden und dem per Parameter übergebenen Waypoint wie in Listing \ref{lst:distancecalc} ersichtlich berechnet. Die Distanz eines ganzen Tracks entspricht der Summe der Distanzen zwischen allen Wegpunkten und ist in der Methode \lstinline$getDistance()$ der Track Klasse implementiert.
+Die Distanz zwischen zwei Wegpunkten wird gemäss der Haversine Formel (Siehe Kapitel \ref{subsec:basicscalcdistance}) berechnet. Implementiert ist dies als Methode \lstinline$getDistanceTo(Waypoint)$ welche die Distanz zwischen dem aufrufenden und dem per Parameter übergebenen Waypoint, wie in Listing \ref{lst:distancecalc} ersichtlich, berechnet. Die Distanz eines ganzen Tracks entspricht der Summe der Distanzen zwischen allen Wegpunkten und ist in der Methode \lstinline$getDistance()$ der Track Klasse implementiert.
 
 \begin{lstlisting}[caption={Distanzberechnung}, label={lst:distancecalc}]
 private final static int R = 6371;

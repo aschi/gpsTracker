@@ -2,7 +2,7 @@
 \section{Analyse}
 \subsection{Genauigkeit und Verwendbarkeit der Daten}
 \label{subsec:analyseprecision}
-Die GPS Daten die mit dem verwendeten Gerät (Google Nexus 5) aufgezeichnet wurden, sind - wie für GPS üblich \cite{gpsprecision} - bis auf wenige Meter genau. Die Genauigkeit hängt dabei vor Allem von der Umgebung ab. In Tunneln oder in engen Häuserschluchten ist der Empfang schlechter als auf einem offenen Feld oder im Wald. 
+Die GPS Daten, die mit dem verwendeten Gerät (Google Nexus 5) aufgezeichnet wurden, sind - wie für GPS üblich \cite{gpsprecision} - bis auf wenige Meter genau. Die Genauigkeit hängt dabei vor Allem von der Umgebung ab. In Tunneln oder in engen Häuserschluchten ist der Empfang schlechter als auf einem offenen Feld oder im Wald. 
 
 \begin{figure}[h]
   \centering
@@ -11,7 +11,7 @@ Die GPS Daten die mit dem verwendeten Gerät (Google Nexus 5) aufgezeichnet wurd
   \label{fig:precisionissues10s}
 \end{figure}
 
-Probleme durch diese Ungenauigkeit sind vor allem aufgetreten, wenn zu wenig Datenpunkte erfasst wurden. In der Abbildung \ref{fig:precisionissues10s} ist dies gut ersichtlich. Die Sternchen stehen für GPS Datenpunkte. Das erste Sternchen von Rechts liegt ziemlich gut auf der Strasse. Das Zweite ist aufgrund der GPS Ungenauigkeiten und äusseren Einflüssen um einige Meter daneben. Das Dritte ist wieder korrekt auf der Strasse. Zwischen dem Dritten und Vierten bin ich von der Strasse auf einen Waldweg abgebogen. Der vierte Datenpunkt liegt schön auf dem Waldweg, wird der Punkt an dem ich wirklich abgebogen bin (blauer Stern) nicht erfasst. Das Selbe geschieht zwischen dem vierten und fünften Datenpunkt. Diese Probleme lassen sich durch häufigeres Aufzeichnen der Daten minimieren.
+Probleme durch diese Ungenauigkeit sind vor allem aufgetreten, wenn zu wenig Datenpunkte erfasst wurden. In der Abbildung \ref{fig:precisionissues10s} ist dies gut ersichtlich. Die schwarzen Sternchen stehen für GPS Datenpunkte. Das erste schwarze Sternchen von Rechts liegt ziemlich gut auf der Strasse. Das Zweite ist aufgrund der GPS Ungenauigkeiten und äusseren Einflüssen um einige Meter daneben. Das Dritte ist wieder korrekt auf der Strasse. Zwischen dem Dritten und Vierten bin ich von der Strasse auf einen Waldweg abgebogen. Der vierte Datenpunkt liegt schön auf diesem Waldweg, auf der Karte ist der Punkt an dem ich wirklich abgebogen bin (blauer Stern) nicht erfasst. Das Selbe geschieht zwischen dem vierten und fünften Datenpunkt. Diese Probleme liessen sich durch das Aufzeichnen von mehr Datenpunkten minimieren.
 
 \begin{figure}[h]
   \centering
@@ -23,6 +23,8 @@ Probleme durch diese Ungenauigkeit sind vor allem aufgetreten, wenn zu wenig Dat
 Bei einer genügenden Menge Datenpunkte wie in Abbildung \ref{fig:precisionissues1s} existieren immer noch Ungenauigkeiten. Die Route im markierten Bereich verläuft ein bis zwei Meter neben der Strasse. Jedoch wird hier im Gegensatz zur Abbildung \ref{fig:precisionissues10s} der Richtungswechsel problemlos korrekt eingezeichnet.
 
 Man kann die Daten, sofern genügend Datenpunkte vorhanden sind, in der Form in welcher sie derzeit generiert werden durchaus verwenden um den Verlauf einer Fahrradtour festzuhalten. Die im Rahmen dieses Projektes aufgezeichneten Routen sind nicht befreit von Ungenauigkeiten, jedoch ist überall ersichtlich auf welcher Strasse ich gefahren bin. Um die vorhandenen Ungenauigkeiten zu minimieren, könnte man zum Beispiel einen  Map-Matching Filter anwenden wie er von Jason Daniel Martin et al. im Paper Dynamic GPS-position correction for mobile pedestrian navigation and orientation \cite{gpscorrection} vorgestellt wird. Um die Anzahl Datenpunkte zu verkleinern und um Ausreisser zu eliminieren könnten numerische Verfahren wie zum Beispiel der Ramer-Douglas-Peucker Algorithmus \cite{ramer}\cite{douglaspeucker} verwendet werden.
+
+Die Aufgezeichneten Höhen (Altitude), beziehungsweise deren Differenzen weichen in allen Messungen sehr stark von der Realität ab. Auf der Karte von Schweizmobil\cite{velolandmap} können bei Bedarf korrekte Angaben zur Höhendifferenz ausgelesen werden.
 
 \subsection{Akkuverbrauch}
 \label{subsec:analysebatteryusage}
@@ -45,6 +47,8 @@ Wirklich relevant hierbei ist lediglich das \lstinline$timeInterval$. In diesen 
 
 In der Abbildung \ref{fig:batteryusage} sind die Resultate dieses Tests ersichtlich. Es hat sich kein markanter Unterschied des Akkuverbrauchs aufgrund dieser Konfigurationsparameter feststellen lässt. Dies deckt sich mit der Stackexchange Antwort vom Stackexchange User Jan:
 
-\flqq The bigger thing is that you will be needing to keep the CPU powered on all the time. And, since you're using the PendingIntent flavor of requestLocationUpdates(), I am guessing that you plan on collecting data for a long time.\frqq
+\flqq ...Your 10 second time value might be used by the OS to control power usage, but there is no guarantee. And, with that low of a value, it seems highly unlikely that it would be used. Every hour, maybe, but not every 10 seconds.
+
+The bigger thing is that you will be needing to keep the CPU powered on all the time. And, since you're using the PendingIntent flavor of requestLocationUpdates(), I am guessing that you plan on collecting data for a long time....\frqq \cite{batteryusage}
 
 Er beschreibt, dass das Hauptproblem das ständige Arbeiten des Prozessors sei, welches zum Tracken der Location notwendig ist. Gemäss ihm sei es vor allem wichtig, dass man die \lstinline$LocationUpdates$ wieder ausschaltet wenn man sie nicht mehr braucht. Dies ist der Fall in dem hier hergestellten GPS Tracker.

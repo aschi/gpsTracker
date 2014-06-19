@@ -3,53 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: seminararbeit.aux
 The style file: plain.bst
 Database file #1: projekt.bib.bib
-I was expecting a `,' or a `}'---line 110 of file projekt.bib.bib
- :   
- :   publisher =    {Leica Geosystems AG},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--empty publisher in leicagps
-Warning--empty year in leicagps
 Warning--empty year in gpscorrection
-You've used 17 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            566 strings with 6392 characters,
-and the built_in function-call counts, 3857 in all, are:
-= -- 357
-> -- 142
+            577 strings with 6670 characters,
+and the built_in function-call counts, 4472 in all, are:
+= -- 417
+> -- 163
 < -- 0
-+ -- 59
-- -- 42
-* -- 162
-:= -- 657
-add.period$ -- 50
-call.type$ -- 17
-change.case$ -- 71
++ -- 68
+- -- 48
+* -- 172
+:= -- 762
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 83
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 139
-empty$ -- 382
-format.name$ -- 42
-if$ -- 825
+cite$ -- 21
+duplicate$ -- 160
+empty$ -- 448
+format.name$ -- 48
+if$ -- 963
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 20
 missing$ -- 6
-newline$ -- 87
-num.names$ -- 34
-pop$ -- 123
+newline$ -- 103
+num.names$ -- 40
+pop$ -- 144
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 64
 quote$ -- 0
-skip$ -- 129
+skip$ -- 154
 stack$ -- 0
-substring$ -- 139
-swap$ -- 17
+substring$ -- 154
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
-warning$ -- 3
-while$ -- 37
-width$ -- 19
-write$ -- 159
-(There was 1 error message)
+type$ -- 78
+warning$ -- 1
+while$ -- 43
+width$ -- 22
+write$ -- 189
+(There was 1 warning)

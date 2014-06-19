@@ -1,7 +1,7 @@
 \clearpage
 \section{Grundlagen}
 \subsection{Grundlagen der Erdvermessung}
-Um Karten oder Modelle der Erde zu erstellen, braucht es ein Vermessungssystem welches adäquat die Grösse und Form der Erde widerspiegelt. Wichtig beim Arbeiten mit einem solchen Modell ist, dass man sich bewusst ist, welche Annahmen getroffen wurden und welche Abweichungen aus sowohl der Messmethode als auch dem Modell entstehen. In diesem Kapitel geht es um die Klärung der Grundlagen die zum Verständnis der Funktionsweise des GPS notwendig sind. \cite{geodesy}
+Um Karten oder Modelle der Erde zu erstellen, braucht es ein Vermessungssystem welches adäquat die Grösse und Form der Erde widerspiegelt. Wichtig beim Arbeiten mit einem solchen Modell ist, dass man sich bewusst ist, welche Annahmen getroffen wurden und welche Abweichungen aus sowohl der Messmethode, als auch dem Modell entstehen. In diesem Kapitel geht es um die Klärung der Grundlagen die zum Verständnis der Funktionsweise des GPS notwendig sind. \cite{geodesy}
 
 \begin{figure}[h]
   \centering
@@ -15,7 +15,7 @@ Die Wissenschaft der Erdvermessung - auch Geodäsie - beschäftigt sich mit dem 
 \subsection{Georeferenzierung}
 Die Fähigkeit geografische Positionen genau zu beschreiben ist essentiell für sowohl Karten als auch geografische Informationssysteme. Diesen Prozess nennt man Georeferenzierung.
 
-Eine geografische Position mithilfe von Längen- und Breitengraden auf dem Referenzellipsoiden zu beschreiben ist eine Möglichkeit der Georeferenzierung. Weitere Möglichkeiten wäre zum Beispiel die Verwendung von planaren oder kartesischen Koordinatensystemen. Im Umgang mit GPS werden ausschliesslich Längen- und Breitengrade verwendet, weshalb die weiteren Möglichkeiten im Rahmen dieser Arbeit nicht weiter erläutert werden.
+Eine geografische Position mithilfe von Längen- und Breitengraden auf dem Referenzellipsoiden zu beschreiben ist eine Art der Georeferenzierung. Weitere Möglichkeiten wäre zum Beispiel die Verwendung von planaren oder kartesischen Koordinatensystemen. Im Umgang mit GPS werden ausschliesslich Längen- und Breitengrade verwendet, weshalb die weiteren Möglichkeiten im Rahmen dieser Arbeit nicht weiter erläutert werden.
 
 Die Längen- und Breitengrade sind Winkelmessungen wischen dem Zentrum des entsprechenden Ellipsoiden und einem Punkt auf der Oberfläche. Breitengrade (in Englisch latitude) messen dabei den Winkel in Nord-Süd Richtung, Längengrade (in Englisch longitude) den Ost-West Winkel. \cite{georef}
 
@@ -83,7 +83,7 @@ d & = & R \cdot c
 Diese Formel verwendet anstelle des Ellipsoiden eine Sphäre was bei grossen Distanzen zu Fehlern führen kann. Bei den Distanzen zwischen Messpunkten von Velotouren oder Wanderungen ist dieser Fehler nicht signifikant. Die Vorteile dieser Formel liegen in der einfachen Implementierbarkeit und der guten Performanz dieser Implementationen. 
 
 \subsection{Das GPX Datenformat}
-Das GPX oder GPS Exchange Format ist ein XML Schema zur Darstellung von GPS Daten. Es kann verwendet werden um \flqq Waypoints\frqq, \flqq Tracks\frqq und \flqq Routes\frqq darzustellen. Eine Ansammlung von \flqq Waypoints\frqq kann verwendet werden um eine Menge von Punkten darzustellen die in keinem sequenziellen Zusammenhang zueinander stehen. \flqq Routes\frqq und \flqq Tracks\frqq beinhalten sequenziell angeordnete \flqq Waypoints\frqq. Der Unterschied zwischen den Beiden ist, dass bei einer \flqq route\frqq nur Wegpunkte bei Richtungsänderungen abgebildet sind, den Rest muss sich das System daraus berechnen. Ein \flqq Track\frqq beinhaltet alle aufgezeichneten Punkte. Im Rahmen dieses Projektes werden \flqq Tracks\frqq aufgezeichnet. \cite{gpxwiki} \cite{gpx}
+Das GPX oder GPS Exchange Format ist ein XML Schema zur Darstellung von GPS Daten. Es kann verwendet werden um \flqq Waypoints\frqq, \flqq Tracks\frqq und \flqq Routes\frqq darzustellen. Eine Ansammlung von \flqq Waypoints\frqq kann verwendet werden um eine Menge von Punkten darzustellen die in keinem sequenziellen Zusammenhang zueinander stehen. \flqq Routes\frqq und \flqq Tracks\frqq beinhalten sequenziell angeordnete \flqq Waypoints\frqq. Der Unterschied zwischen den Beiden ist, dass bei einer \flqq Route\frqq nur Wegpunkte bei Richtungsänderungen abgebildet sind, den Rest muss sich das System daraus berechnen. Ein \flqq Track\frqq beinhaltet alle aufgezeichneten Punkte. Im Rahmen dieses Projektes werden \flqq Tracks\frqq aufgezeichnet. \cite{gpxwiki} \cite{gpx}
 
 \begin{lstlisting}[language=XML, caption={GPX Beispielfile}]
 <?xml version="1.0" ?>

@@ -9,6 +9,7 @@ ArcGIS 9.2.
 \bibitem{leicagps}
 Leica~Geosystems AG.
 \newblock {\em Einführung in die GPS Vermessung (Global Positioning System)}.
+\newblock Leica Geosystems AG, 1999.
 
 \bibitem{contentprovider}
 Android Developer~API Documentation.
@@ -67,6 +68,12 @@ Wikimedia Foundation.
 \newblock World geodetic system 1984.
 \newblock \url{http://en.wikipedia.org/wiki/World_Geodetic_System_1984}.
 
+\bibitem{batteryusage}
+Jan.
+\newblock Answer to: Is location provider really a battery drain?
+\newblock
+  \url{http://stackoverflow.com/questions/8947136/is-location-provider-really-a-battery-drain}.
+
 \bibitem{gpscorrection}
 Jason~Daniel Martin, Jens Krösche, and Susanne Boll.
 \newblock Dynamic gps-position correction for mobile pedestrian navigation and
@@ -85,6 +92,16 @@ Urs Ramer.
   curves}.
 \newblock {\em Computer Graphics and Image Processing, Vol. 1, No. 3.},
   1(3):244--256, 1972.
+
+\bibitem{schweizmobil}
+Schweizmobil.
+\newblock Schweizmobil.
+\newblock \url{http://www.schweizmobil.ch/}.
+
+\bibitem{velolandmap}
+Schweizmobil.
+\newblock Veloland: Karte.
+\newblock \url{http://map.veloland.ch/}.
 
 \bibitem{haversine}
 R.~W. Sinnott.
