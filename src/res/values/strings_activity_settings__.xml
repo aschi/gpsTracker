@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+
+    <!-- Example General settings -->
+    <string name="pref_header_settings">GPS Settings</string>
+    <string name="pref_max_dist">Max dist between trackpoints (m)</string>
+    <string name="pref_max_time">Max time between trackpoints (ms)</string>
+   
+</resources>
